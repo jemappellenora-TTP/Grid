@@ -11,6 +11,28 @@ export class Table extends Component {
       selectedColor: null,
     };
   }
+  addRows = () => {
+    this.setState({ rows: this.state.rows + 1 });
+  };
+  addCollumns = () => {
+    this.setState({ cells: this.state.cells + 1 });
+  };
+  removeRows = () => {
+    if (this.state.rows > 0) {
+      this.setState({ rows: this.state.rows - 1 });
+    } else {
+    // if it is zero
+      this.setState({ rows: 0, cells: 1 });
+    }
+  };
+  removeCollumns = () => {
+    if (this.state.cells > 0) {
+      this.setState({ cells: this.state.cells - 1 });
+    } else {
+    // if it is zero
+      this.setState({ cells: 1, rows: 0 });
+    }
+  };
 
   render() {
     return (
