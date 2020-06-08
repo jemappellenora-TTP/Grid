@@ -7,7 +7,7 @@ export class Table extends Component {
     this.state = {
       rows: 0,
       cells: 1,
-      defaultColor: "blue",
+      defaultColor: "white",
       selectedColor: null,
     };
   }
@@ -38,6 +38,7 @@ export class Table extends Component {
   selectacolor = (e) => {
     this.setState({ selectedColor: e.target.value });
   };
+  
   onClickChange = (e) => {
     e.target.style.backgroundColor = this.state.selectedColor;
   };
@@ -55,14 +56,14 @@ export class Table extends Component {
       <>
         <div id="buttons">
           <button onClick={this.addRows}>Add a row</button>
-          <button onClick={this.addCollumns}>Add a cells</button>
+          <button onClick={this.addCollumns}>Add a Column</button>
           <button onClick={this.removeRows}>Remove a row</button>
-          <button onClick={this.removeCollumns}>Remove a cells</button>
+          <button onClick={this.removeCollumns}>Remove a Column</button>
         </div>
         <span>Select A color:</span>
         <select onChange={this.selectacolor}>
           <option value={this.state.defaultColor}>Please select a Color</option>
-          <option value="red">Blue</option>          
+          <option value="Blue">Blue</option>          
           <option value="green">Green</option>
           <option value="orange">Orange</option>
           <option value="yellow">Yellow</option>
